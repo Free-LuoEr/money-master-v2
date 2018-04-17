@@ -20,7 +20,7 @@ public class AccountWorkflow {
     BigDecimal amount = event.getDetails().getAmount();
     String transactionId = ctx.getEntityId();
 
-    String fromAccountId = event.getDetails().getToAccounId();
+    String fromAccountId = event.getDetails().getToAccountId();
 
     return ctx.update(Account.class, fromAccountId, new CreditAccountCommand(amount, transactionId));
   }
