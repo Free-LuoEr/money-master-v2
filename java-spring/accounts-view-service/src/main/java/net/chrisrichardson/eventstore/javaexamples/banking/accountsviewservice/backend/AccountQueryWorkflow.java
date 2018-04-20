@@ -72,12 +72,12 @@ public class AccountQueryWorkflow {
 
   @EventHandlerMethod
   public void recordDebit(DispatchedEvent<AccountDebitedEvent> de) {
-    saveChange(de, +1);
+    saveChange(de, -1);
   }
 
   @EventHandlerMethod
   public void recordCredit(DispatchedEvent<AccountCreditedEvent> de) {
-    saveChange(de, -1);
+    saveChange(de, +1);
   }
 
   @EventHandlerMethod
